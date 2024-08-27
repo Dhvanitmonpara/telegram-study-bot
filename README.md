@@ -1,6 +1,3 @@
-Sure! Here's the revised `README.md` without the code:
-
----
 
 # 📚 Study Bot
 
