@@ -10,8 +10,6 @@ TOKEN = os.getenv("TOKEN")
 ADMIN_ID = int(os.getenv("ADMIN_ID"))
 
 
-
-
 async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
     await update.message.reply_text("Hello! Welcome to Study Bot")
 
@@ -29,14 +27,12 @@ async def helps(update: Update, context: ContextTypes.DEFAULT_TYPE):
         '''
     )
 
-
 async def content(update: Update, context: ContextTypes.DEFAULT_TYPE):
     await update.message.reply_text(
         '''
         Create a focused study environment, set clear goals, and use active learning techniques. Take regular breaks to avoid burnout. Prioritize sleep and stay organized with a planner. Don't hesitate to seek help when needed. Remember, consistent effort and smart strategies are key to academic success.
         '''
     )
-
 
 async def contact(update: Update, context: ContextTypes.DEFAULT_TYPE):
     await update.message.reply_text(
@@ -52,7 +48,6 @@ async def contact(update: Update, context: ContextTypes.DEFAULT_TYPE):
         **Hours:** Mon-Fri 9-5, Sat 10-2, Sun Closed
         '''
     )
-
 
 async def add_pdf(update: Update, context: ContextTypes.DEFAULT_TYPE):
     chat_id = update.effective_chat.id
@@ -98,7 +93,6 @@ async def handle_document(update: Update, context: ContextTypes.DEFAULT_TYPE):
     else:
         await update.message.reply_text("Please upload a PDF file.")
 
-
 async def handle_msg(update: Update, context: ContextTypes.DEFAULT_TYPE):
  
 
@@ -120,6 +114,7 @@ async def handle_msg(update: Update, context: ContextTypes.DEFAULT_TYPE):
                 await update.message.reply_text("The file associated with this keyword no longer exists in the database.")
         else:
             await update.message.reply_text("No PDF found for your query.")
+
 
 
 application = Application.builder().token(TOKEN).build()
